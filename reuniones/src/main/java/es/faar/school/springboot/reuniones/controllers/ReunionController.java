@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import es.faar.school.springboot.reuniones.models.Persona;
 import es.faar.school.springboot.reuniones.models.Reunion;
 
 //@RestController
@@ -22,7 +23,11 @@ public class ReunionController {
 	
 	static {
 		for (int i = 0; i<5;i++) {
-			reuniones.add(new Reunion(i, "Reunion " + i, ZonedDateTime.now().plusDays(i)));
+			Reunion reunion = new Reunion(i,"Reunion " + i, ZonedDateTime.now().plusDays(i));
+			for (int j = 0; j < i; j ++) {
+				reunion.addAsistente(new Persona(i+j, "nombre " +i+j, " Apellido " +i+j));
+			}
+			reuniones.add(reunion);
 		}
 		
 	}
