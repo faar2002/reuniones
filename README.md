@@ -1,4 +1,4 @@
-# reuniones
+# Reuniones
 Proyecto de curso de spring boot
 
 # Configuracion del proyecto
