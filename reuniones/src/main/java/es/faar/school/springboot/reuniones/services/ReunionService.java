@@ -3,6 +3,7 @@ package es.faar.school.springboot.reuniones.services;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -24,5 +25,11 @@ public class ReunionService {
 	public List<Reunion> getAllReuniones(){
 		return reunionRepository.findAll();
 		
+	}
+
+
+	public Optional<Reunion> getById(long idReunion) {
+		
+		return reunionRepository.findById(idReunion);
 	}
 }
