@@ -16,7 +16,10 @@ spring:
      url: "jdbc:h2:mem:testdb"
   jpa:
     hibernate:
-      ddl-auto: "none"              
+      ddl-auto: "none"  
+  data:
+    rest:
+      base-path: "api/rest"            
 ---
 spring:
   config:

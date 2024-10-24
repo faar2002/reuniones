@@ -17,7 +17,7 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-		http.authorizeHttpRequests().requestMatchers("/api/*") //
+		http.authorizeHttpRequests().requestMatchers("/api/*", "/api/rest/**") //
 		.hasRole("API_USER") //
 		.and().authorizeHttpRequests() //
 		.requestMatchers("/*").authenticated() //
@@ -38,7 +38,7 @@ public class SecurityConfig {
 				.roles("USER").build();
 		return new InMemoryUserDetailsManager(usuario1, usuario2);
 	}
-
+	
 	@Bean
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
