@@ -2,6 +2,7 @@ package es.faar.school.springboot.reuniones.services;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -21,5 +22,10 @@ public class PersonaService {
 
 	public List<Persona> getAllPersonas(){
 		return personaRepository.findAll();
+	}
+
+
+	public Optional<Persona> getById(long idAsistente) {
+		return personaRepository.findById(idAsistente);
 	}
 }
